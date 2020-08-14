@@ -10,4 +10,4 @@ xray-connector:2.3.0
 xunit:2.3.9
 msbuild:1.29
 mstest:1.0.0
-nuget:1.625.3
+nuget:1.0
