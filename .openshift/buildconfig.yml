@@ -1,0 +1,33 @@
+apiVersion: build.openshift.io/v1
+kind: BuildConfig
+metadata:
+  labels:
+    build: jenkins
+  name: jenkins
+spec:
+  failedBuildsHistoryLimit: 5
+  nodeSelector: null
+  output:
+    to:
+      kind: ImageStreamTag
+      name: 'jenkins:latest'
+  postCommit: {}
+  resources: {}
+  runPolicy: Serial
+  source:
+    git:
+      ref: master
+      uri: 'ssh://git@github.com:mriedmann/openshift-jenkins.git'
+    type: Git
+  strategy:
+    dockerStrategy:
+      from:
+        kind: ImageStreamTag
+        namespace: openshift
+        name: 'jenkins:2'
+    type: Docker
+  successfulBuildsHistoryLimit: 5
+  triggers:
+    - type: ConfigChange
+    - imageChange:
+      type: ImageChange

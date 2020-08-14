@@ -1,0 +1,13 @@
+stashNotifier:1.20
+cisco-spark-notifier:1.1.1
+email-ext:2.74
+git-parameter:0.9.12
+msbuild:1.29
+mstest:1.0.0
+next-build-number:1.6
+nuget:1.625.3
+sonar:2.11
+test-results-analyzer:0.3.5
+throttle-concurrents:2.0.2
+xray-connector:2.3.0
+xunit:2.3.9
